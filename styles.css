@@ -211,6 +211,11 @@ h3 {
   color: var(--ink);
 }
 
+.button.music {
+  background: var(--gold);
+  color: var(--ink);
+}
+
 .button.map {
   border-color: rgba(255, 248, 232, 0.42);
   color: #fff8e8;
@@ -401,6 +406,21 @@ h3 {
   border-radius: 8px;
   min-height: 260px;
   padding: 24px;
+}
+
+.event-grid .music-card {
+  background:
+    linear-gradient(135deg, rgba(23, 18, 13, 0.9), rgba(108, 63, 36, 0.92)),
+    var(--ink);
+  color: #fff8e8;
+}
+
+.event-grid .music-card p {
+  color: rgba(255, 248, 232, 0.78);
+}
+
+.music-card .button {
+  margin-top: 12px;
 }
 
 .event-grid p {
