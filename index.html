@@ -14,13 +14,16 @@
     <link rel="preload" href="assets/hero.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Poprawka układu sekcji Hero -->
     <style>
+      /* Poprawka płynnego przewijania */
+      html {
+        scroll-behavior: smooth;
+      }
       .hero-content {
-        padding-bottom: 80px; /* Robi miejsce na dolny pasek info */
+        padding-bottom: 80px;
       }
       .hero-info {
-        position: relative !important; /* Zmienia pozycjonowanie z absolutnego na relatywne, by nie nachodziło na przyciski */
+        position: relative !important;
         margin-top: 2rem;
         z-index: 10;
         background: rgba(0,0,0,0.2);
@@ -28,9 +31,9 @@
         border-radius: 8px;
       }
       .hero-actions {
-        margin-bottom: 2rem; /* Dodatkowy odstęp pod przyciskami */
+        margin-bottom: 2rem;
         position: relative;
-        z-index: 20; /* Przyciski są "wyżej" niż reszta, by były klikalne */
+        z-index: 20;
       }
       @media (max-width: 768px) {
         .hero-info {
@@ -107,11 +110,11 @@
           <h1>Wesoła Tawerna – Grill i Zabawa</h1>
           <p class="hero-lead">Autentyczne jedzenie z grilla na żywym ogniu, zimne piwo i najlepsze karaoke nad Wisłą. Poczuć klimat letniego wieczoru w Warszawie.</p>
           <div class="hero-actions">
-            <a class="button primary" href="tel:+48505731316">Zarezerwuj stolik</a>
+            <!-- Poprawka: Przycisk przewija teraz do sekcji Kontakt -->
+            <a class="button primary" href="#kontakt">Zarezerwuj stolik</a>
             <a class="button music" href="https://soundcloud.com/tomasz-s-113654152/sets/weso-a-tawerna-nasze-autorskie" target="_blank" rel="noreferrer">Posłuchaj utworów</a>
             <a class="button secondary" href="#menu">Sprawdź menu</a>
           </div>
-          <!-- Sekcja info przeniesiona do wnętrza hero-content dla lepszej kontroli -->
           <div class="hero-info" aria-label="Najważniejsze informacje">
             <span>Grill na żywym ogniu</span>
             <span>Karaoke Warszawa Białołęka</span>
@@ -217,7 +220,7 @@
         <div class="faq-grid">
           <div class="faq-item">
             <h3>Czy w Wesołej Tawernie można zarezerwować stolik?</h3>
-            <p>Tak, przyjmujemy rezerwacje telefoniczne, szczególnie na weekendy oraz wieczory z karaoke. Zadzwoń pod numer 505 731 316.</p>
+            <p>Tak, przyjmujemy rezerwacje telefoniczne, szczególnie na weekendy oraz wieczory z karaoke. Zadzwoń pod jeden z numerów w sekcji kontaktowej.</p>
           </div>
           <div class="faq-item">
             <h3>Czy lokal jest przyjazny dzieciom i zwierzętom?</h3>
@@ -243,7 +246,8 @@
               <strong>Wesoła Tawerna – Grill Bar</strong><br>
               ul. Odkryta 1<br>
               03-140 Warszawa (Białołęka)<br>
-              E-mail: <a href="/cdn-cgi/l/email-protection#3a5155544e5b514e7a4d5f4955565b4e5b4d5f48545b144a56"><span class="__cf_email__" data-cfemail="deb5b1b0aabfb5aa9ea9bbadb1b2bfaabfa9bbacb0bff0aeb2">[email&#160;protected]</span></a>
+              <!-- Poprawka e-maila (kodowanie) -->
+              E-mail: <a href="/cdn-cgi/l/email-protection#c9a2a6a7bda8a2bd89beacbaa6a5a8bda8beacbba7a8e7b9a5">kontakt&#64;wesolatawerna.pl</a>
             </address>
             <p>Znajdziesz nas tuż przy wale wiślanym – idealne miejsce na odpoczynek nad Wisłą.</p>
           </div>
@@ -275,5 +279,5 @@
     </div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0b7a83e5df114f3',t:'MTc4MTQyMjUxNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0b7b56809c93954',t:'MTc4MTQyMzA1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
