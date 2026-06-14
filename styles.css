@@ -1145,18 +1145,39 @@ h3 {
 }
 
 .button.music {
-  animation: musicPulse 2.4s ease-out infinite;
+  background: linear-gradient(135deg, var(--ember) 0%, #e07b39 100%);
+  color: #fff8e8;
+  box-shadow: 0 6px 18px rgba(232, 92, 50, 0.4);
+  animation: musicPulse 2s ease-out infinite;
 }
 
 @keyframes musicPulse {
-  0% { box-shadow: 0 0 0 0 rgba(215, 155, 66, 0.5); }
-  100% { box-shadow: 0 0 0 14px rgba(215, 155, 66, 0); }
+  0% {
+    box-shadow: 0 6px 18px rgba(232, 92, 50, 0.4),
+                0 0 0 0 rgba(232, 92, 50, 0.65);
+  }
+  100% {
+    box-shadow: 0 6px 18px rgba(232, 92, 50, 0.4),
+                0 0 0 22px rgba(232, 92, 50, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .button.music {
     animation: none;
   }
+}
+
+/* === Przycisk "Sprawdź menu" (secondary) — teraz złoty === */
+.button.secondary {
+  background: var(--gold);
+  border-color: transparent;
+  color: var(--ink);
+}
+
+.button.secondary:hover {
+  background: #e0a548;
+  color: var(--ink);
 }
 
 /* === Nawigacja: link "Muzyka" === */
