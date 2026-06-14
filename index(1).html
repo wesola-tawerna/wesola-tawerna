@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wesoła Tawerna - Grill Bar Warszawa Białołęka  Karaoke, Piwo i Jedzenie z Grilla</title>
+    <meta name="description" content="Szukasz najlepszego grilla na Białołęce? Wesoła Tawerna przy ul. Odkrytej 1 to pyszne jedzenie z grilla, zimne piwo w ogródku piwnym i najlepsze karaoke w Warszawie. Sprawdź nasze menu!">
+    <meta name="keywords" content="restauracja Białołęka, grill bar Warszawa, grill Warszawa, jedzenie z grilla Warszawa, ogródek piwny Warszawa, karaoke Warszawa, lokal nad Wisłą Warszawa">
+    
+    <meta name="theme-color" content="#17120d">
+    <meta property="og:title" content="Wesoła Tawerna - Grill Bar Warszawa Białołęka">
+    <meta property="og:description" content="Pyszny grill, zimne piwo i karaoke na Białołęce. Wpadnij do Wesołej Tawerny pod drzewami!">
+    <meta property="og:image" content="assets/hero.jpg">
+    <link rel="preload" href="assets/hero.jpg" as="image">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      /* Poprawka płynnego przewijania */
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-content {
+        padding-bottom: 80px;
+      }
+      .hero-info {
+        position: relative !important;
+        margin-top: 2rem;
+        z-index: 10;
+        background: rgba(0,0,0,0.2);
+        padding: 10px;
+        border-radius: 8px;
+      }
+      .hero-actions {
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 20;
+      }
+      @media (max-width: 768px) {
+        .hero-info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Wesoła Tawerna",
+      "image": "wesola-tawerna.github.io/wesola-tawerna/assets/logo.jpg", 
+      "url": "https://wesola-tawerna.github.io/wesola-tawerna/",
+      "telephone": "+48507735082",
+      "priceRange": "$$",
+      "menu": "wesola-tawerna.github.io/wesola-tawerna/#menu",
+      "servesCuisine": "Grill, Polish",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Odkryta 1",
+        "addressLocality": "Warszawa",
+        "postalCode": "03-140",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.324596,
+        "longitude": 20.936501
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "12:00",
+          "closes": "22:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61577612831058"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#start" aria-label="Wesoła Tawerna - strona główna">
+        <img src="assets/logo.jpg" alt="Logo Wesoła Tawerna">
+        <span>Wesoła Tawerna</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#o-nas">O nas</a>
+        <a href="#menu">Menu</a>
+        <a href="#karaoke">Karaoke</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main id="start">
+      <section class="hero">
+        <img class="hero-bg" src="assets/hero.jpg" alt="Wesoła Tawerna - grill bar Warszawa Białołęka przy Odkrytej 1">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Grill Bar • Odkryta 1 • Białołęka</p>
+          <h1> Wesoła Tawerna </h1>
+          <p class="hero-lead">Autentyczne jedzenie z grilla na żywym ogniu, zimne piwo i najlepsze karaoke nad Wisłą. Poczuć klimat letniego wieczoru w Warszawie.</p>
+          <div class="hero-actions">
+            <!-- Poprawka: Przycisk przewija teraz do sekcji Kontakt -->
+            <a class="button primary" href="#kontakt">Zarezerwuj stolik</a>
+            <a class="button music" href="https://soundcloud.com/tomasz-s-113654152/sets/weso-a-tawerna-nasze-autorskie" target="_blank" rel="noreferrer">Posłuchaj utworów</a>
+            <a class="button secondary" href="#menu">Sprawdź menu</a>
+          </div>
+          <div class="hero-info" aria-label="Najważniejsze informacje">
+            <span>Grill na żywym ogniu</span>
+            <span>Karaoke Warszawa Białołęka</span>
+            <span>Ogródek piwny nad Wisłą</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" id="o-nas">
+        <div class="section-kicker">Poznaj naszą historię</div>
+        <div class="intro-grid">
+          <div>
+            <h2>Restauracja na Białołęce z klimatem, jakiego szukasz.</h2>
+          </div>
+          <div class="intro-copy">
+            <p>Wesoła Tawerna to coś więcej niż zwykły <strong>grill bar w Warszawie</strong>. Nasza historia zaczęła się z pasji do prostego, dobrego jedzenia i spotkań na świeżym powietrzu. Położona przy ulicy Odkrytej 1, w bezpośrednim sąsiedztwie wałów wiślanych, stała się ulubionym przystankiem dla spacerowiczów i rowerzystów szukających odpoczynku.</p>
+            <p>Nasz <strong>ogródek piwny na Białołęce</strong> to idealne miejsce na relaks pod drzewami. Serwujemy klasyki z rusztu: soczystą karkówkę, chrupiącą kiełbasę i domowe frytki. Wszystko to w swobodnej atmosferze, gdzie każdy czuje się jak u siebie.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-band" aria-label="Dlaczego warto nas odwiedzić">
+        <div class="feature">
+          <strong>01</strong>
+          <span>Autentyczny grill na żywym ogniu i świeże składniki.</span>
+        </div>
+        <div class="feature">
+          <strong>02</strong>
+          <span>Największy i najbardziej zielony ogródek piwny na Białołęce.</span>
+        </div>
+        <div class="feature">
+          <strong>03</strong>
+          <span>Imprezy z karaoke i autorska muzyka, która łączy ludzi.</span>
+        </div>
+      </section>
+
+      <section class="section menu-section" id="menu">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Karta dań</p>
+            <h2>Jedzenie z grilla – Menu 2026</h2>
+          </div>
+          <a class="text-link" href="assets/menu-2026.jpg" target="_blank" rel="noreferrer">Pobierz menu PDF</a>
+        </div>
+        <div class="menu-layout">
+          <div class="menu-list">
+            <article>
+              <span>Karkówka z grilla z dodatkami</span>
+              <strong>30 zł</strong>
+            </article>
+            <article>
+              <span>Kiełbasa z rusztu z dodatkami</span>
+              <strong>27 zł</strong>
+            </article>
+            <article>
+              <span>Tradycyjna kaszanka z dodatkami</span>
+              <strong>20 zł</strong>
+            </article>
+            <article>
+              <span>Syty zestaw z karkówką i frytkami</span>
+              <strong>40 zł</strong>
+            </article>
+            <article>
+              <span>Zestaw z kiełbasą i dodatkami</span>
+              <strong>37 zł</strong>
+            </article>
+            <article>
+              <span>Złociste frytki</span>
+              <strong>13 zł</strong>
+            </article>
+          </div>
+          <button class="menu-preview" type="button" data-lightbox="assets/menu-2026.jpg" aria-label="Powiększ menu restauracji">
+            <img src="assets/menu-2026.jpg" alt="Menu Wesoła Tawerna - dania z grilla i przekąski">
+          </button>
+        </div>
+      </section>
+
+      <section class="section karaoke-info" id="karaoke">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Zostań gwiazdą wieczoru</p>
+            <h2>Karaoke Warszawa Białołęka</h2>
+          </div>
+        </div>
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p>Szukasz miejsca na <strong>karaoke w Warszawie</strong>? Wesoła Tawerna to centrum muzycznej rozrywki na prawej stronie Wisły! Nasze wieczory karaoke przyciągają utalentowanych mieszkańców Białołęki i nie tylko. Zapewniamy profesjonalne nagłośnienie, szeroki wybór piosenek i atmosferę, w której każdy odważy się chwycić za mikrofon.</p>
+            <p>Organizujemy również imprezy okolicznościowe i spotkania integracyjne z oprawą muzyczną. Sprawdź nasze social media, aby dowiedzieć się o najbliższych terminach śpiewania!</p>
+          </div>
+          <div class="split-media">
+             <img src="assets/karaoke.png" alt="Impreza karaoke w Wesołej Tawernie na Białołęce" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Warto wiedzieć</p>
+            <h2>Często zadawane pytania (FAQ)</h2>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Czy w Wesołej Tawernie można zarezerwować stolik?</h3>
+            <p>Tak, przyjmujemy rezerwacje telefoniczne, szczególnie na weekendy oraz wieczory z karaoke. Zadzwoń pod jeden z numerów w sekcji kontaktowej.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Czy lokal jest przyjazny dzieciom i zwierzętom?</h3>
+            <p>Oczywiście! Nasz ogródek pod drzewami to idealne miejsce dla rodzin. Jesteśmy również lokalem "pet-friendly" – Twoi czworonożni przyjaciele są u nas mile widziani.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Jakie są godziny otwarcia Wesołej Tawerny?</h3>
+            <p>Działamy sezonowo. Zazwyczaj jesteśmy otwarci od godziny 12:00 do ostatniego gościa w ciepłe dni. Dokładne godziny sprawdzisz na naszym profilu Facebook.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Czy w menu są opcje wegetariańskie?</h3>
+            <p>Skupiamy się na klasykach z grilla, ale w ofercie posiadamy frytki, sałatki oraz zimne napoje i lemoniady.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="kontakt">
+        <div class="contact-panel">
+          <div>
+            <p class="section-kicker">Zapraszamy</p>
+            <h2>Kontakt i Lokalizacja</h2>
+            <address style="font-style: normal; margin-bottom: 1.5rem;">
+              <strong>Wesoła Tawerna - Grill Bar</strong><br>
+              ul. Odkryta 1<br>
+              03-140 Warszawa (Białołęka)<br>
+              <!-- Poprawka e-maila (kodowanie) -->
+              E-mail: <a href="mailto:wesola.tawerna@interia.pl">wesola.tawerna@interia.pl</a>
+            </address>
+            <p>Znajdziesz nas tuż przy wale wiślanym – idealne miejsce na odpoczynek nad Wisłą.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="tel:+48507735082">507735082</a>
+            <a class="button map" href="https://www.google.com/maps/dir/?api=1&destination=52.32459686486873,20.93650140253081" target="_blank" rel="noreferrer">Nawiguj do nas</a>
+          </div>
+          <div class="qr-box">
+            <img src="assets/facebook-qr.png" alt="Kod QR do Facebooka Wesołej Tawerny" loading="lazy">
+            <span>Aktualności i wydarzenia na Facebooku</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <img src="assets/logo.jpg" alt="Logo Wesoła Tawerna">
+        <span>Wesoła Tawerna - Grill Bar Białołęka</span>
+        <p>Dobre jedzenie • zimne piwo • karaoke • najlepszy klimat nad Wisłą</p>
+        <p class="copyright">&copy; 2026 Wesoła Tawerna. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </footer>
+
+    <div class="lightbox" data-lightbox-panel hidden>
+      <button type="button" aria-label="Zamknij podgląd" data-lightbox-close>×</button>
+      <img src="" alt="Powiększone zdjęcie">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
