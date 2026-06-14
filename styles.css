@@ -1137,7 +1137,7 @@ h3 {
   }
 }
 
-/* === Przycisk "Posłuchaj utworów" (ikona + animacja pulse) === */
+/* === Przycisk "Posłuchaj utworów" (czerwony + puls tła) === */
 .button-icon {
   height: 18px;
   margin-right: 8px;
@@ -1145,20 +1145,20 @@ h3 {
 }
 
 .button.music {
-  background: linear-gradient(135deg, var(--ember) 0%, #e07b39 100%);
-  color: #fff8e8;
-  box-shadow: 0 6px 18px rgba(232, 92, 50, 0.4);
-  animation: musicPulse 2s ease-out infinite;
+  background-color: #c84d2b !important;
+  color: #ffffff !important;
+  border: none !important;
+  animation: musicPulse 1.5s ease-in-out infinite;
 }
 
 @keyframes musicPulse {
-  0% {
-    box-shadow: 0 6px 18px rgba(232, 92, 50, 0.4),
-                0 0 0 0 rgba(232, 92, 50, 0.65);
+  0%, 100% {
+    background-color: #c84d2b;
+    transform: scale(1);
   }
-  100% {
-    box-shadow: 0 6px 18px rgba(232, 92, 50, 0.4),
-                0 0 0 22px rgba(232, 92, 50, 0);
+  50% {
+    background-color: #ff2e00;
+    transform: scale(1.06);
   }
 }
 
@@ -1168,16 +1168,29 @@ h3 {
   }
 }
 
-/* === Przycisk "Sprawdź menu" (secondary) — teraz złoty === */
+/* === Przycisk "Sprawdź menu" (secondary) — ZAWSZE złoty === */
 .button.secondary {
-  background: var(--gold);
-  border-color: transparent;
-  color: var(--ink);
+  background-color: var(--gold) !important;
+  border-color: transparent !important;
+  color: var(--ink) !important;
 }
 
 .button.secondary:hover {
-  background: #e0a548;
-  color: var(--ink);
+  background-color: #e0a548 !important;
+}
+
+/* === FAQ — link do playlisty widoczny === */
+.faq-item p a {
+  color: var(--ember);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--ember);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.faq-item p a:hover {
+  color: #d65a36;
 }
 
 /* === Nawigacja: link "Muzyka" === */
