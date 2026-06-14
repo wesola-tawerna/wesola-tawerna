@@ -1137,6 +1137,46 @@ h3 {
   }
 }
 
+/* === Przycisk "Posłuchaj utworów" (ikona + animacja pulse) === */
+.button-icon {
+  height: 18px;
+  margin-right: 8px;
+  width: 18px;
+}
+
+.button.music {
+  animation: musicPulse 2.4s ease-out infinite;
+}
+
+@keyframes musicPulse {
+  0% { box-shadow: 0 0 0 0 rgba(215, 155, 66, 0.5); }
+  100% { box-shadow: 0 0 0 14px rgba(215, 155, 66, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button.music {
+    animation: none;
+  }
+}
+
+/* === Nawigacja: link "Muzyka" === */
+.site-nav a.nav-music {
+  align-items: center;
+  color: var(--gold);
+  display: inline-flex;
+  gap: 6px;
+  opacity: 1;
+}
+
+.site-nav a.nav-music svg {
+  height: 16px;
+  width: 16px;
+}
+
+.site-nav a.nav-music:hover {
+  opacity: 1;
+}
+
 /* === Animacje scroll fade-in === */
 .fade-in {
   opacity: 0;
