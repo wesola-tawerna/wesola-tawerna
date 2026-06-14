@@ -130,8 +130,8 @@ a {
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(13, 9, 5, 0.82), rgba(13, 9, 5, 0.48) 48%, rgba(13, 9, 5, 0.18)),
-    linear-gradient(0deg, rgba(13, 9, 5, 0.78), rgba(13, 9, 5, 0.05) 42%);
+    linear-gradient(90deg, rgba(13, 9, 5, 0.65), rgba(13, 9, 5, 0.35) 48%, rgba(13, 9, 5, 0.08)),
+    linear-gradient(0deg, rgba(13, 9, 5, 0.55), rgba(13, 9, 5, 0.0) 42%);
 }
 
 .hero-content {
@@ -440,24 +440,41 @@ h3 {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  background: var(--paper);
 }
 
-.gallery img {
-  aspect-ratio: 1 / 1;
+.gallery-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-item {
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+  cursor: zoom-in;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.gallery-item img {
+  aspect-ratio: 4 / 3;
+  display: block;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
   width: 100%;
 }
 
-.gallery button {
-  overflow: hidden;
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-.gallery button:hover img {
-  transform: scale(1.04);
+.gallery-item--feature {
+  box-shadow: 0 14px 36px rgba(23, 18, 13, 0.22);
 }
 
 .contact-section {
@@ -617,6 +634,14 @@ h3 {
 
   .gallery {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-item--feature {
+    grid-column: span 1;
+  }
+
+  .gallery-item--feature img {
+    aspect-ratio: 4 / 3;
   }
 
   .qr-box {
@@ -1080,7 +1105,7 @@ h3 {
 /* === Sticky phone button (mobile) === */
 .phone-fab {
   align-items: center;
-  background: var(--ember);
+  background: #25d366;
   border-radius: 50%;
   bottom: 22px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
@@ -1097,7 +1122,7 @@ h3 {
 
 .phone-fab:hover,
 .phone-fab:focus-visible {
-  background: #d65a36;
+  background: #1ea84d;
   transform: scale(1.06);
 }
 
