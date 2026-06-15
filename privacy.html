@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polityka prywatności – Wesoła Tawerna</title>
+    <meta name="description" content="Polityka prywatności i plików cookies serwisu Wesoła Tawerna.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      html{scroll-behavior:smooth}
+      body{background:#0f0b08;color:#e8ddd0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+      h1,h2{color:#f5efe6;margin-top:2rem}
+      h1{font-size:1.8rem;margin-bottom:.5rem}
+      h2{font-size:1.25rem;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:.4rem}
+      a{color:#d4a017;text-decoration:none}
+      a:hover{text-decoration:underline}
+      p{margin:.6rem 0}
+      ul{padding-left:1.2rem}
+      li{margin:.35rem 0}
+      .back{display:inline-block;margin-top:2rem;padding:.6rem 1.2rem;border:1px solid rgba(255,255,255,.2);border-radius:6px;color:#e8ddd0;text-decoration:none}
+      .back:hover{border-color:#d4a017;color:#d4a017}
+      footer{margin-top:3rem;font-size:.85rem;opacity:.6;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+    </style>
+  </head>
+  <body>
+    <h1>Polityka prywatności</h1>
+    <p><strong>Wesoła Tawerna</strong> szanuje Twoją prywatność. Poniżej znajdziesz informacje o tym, jakie dane zbieramy i jak je wykorzystujemy.</p>
+
+    <h2>1. Administrator danych</h2>
+    <p>Administratorem danych osobowych jest właściciel serwisu Wesoła Tawerna, prowadzący działalność pod adresem ul. Odkryta 1, 03-140 Warszawa (Białołęka). Kontakt: <span class="email-obf" data-user="wesola.tawerna" data-domain="interia.pl"></span>.</p>
+
+    <h2>2. Jakie dane zbieramy?</h2>
+    <ul>
+      <li><strong>Dane kontaktowe</strong> – numer telefonu, adres e-mail, jeśli skontaktujesz się z nami w sprawie rezerwacji.</li>
+      <li><strong>Dane techniczne</strong> – adres IP, typ przeglądarki, czas wizyty, źródło ruchu (za pośrednictwem Google Analytics).</li>
+      <li><strong>Pliki cookies</strong> – drobne pliki tekstowe zapisywane przez przeglądarkę w celu poprawnego działania strony i analizy ruchu.</li>
+    </ul>
+
+    <h2>3. Cel przetwarzania</h2>
+    <ul>
+      <li>Odpowiedź na zapytania i obsługa rezerwacji.</li>
+      <li>Analiza ruchu i poprawa funkcjonalności strony.</li>
+      <li>Wyświetlanie treści w sposób optymalny dla Twojego urządzenia.</li>
+    </ul>
+
+    <h2>4. Google Analytics</h2>
+    <p>Strona korzysta z usługi Google Analytics (GA4), która zbiera anonimowe dane statystyczne o ruchu na stronie. Możesz wyłączyć śledzenie w ustawieniach przeglądarki lub za pomocą dodatku <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noreferrer">Google Analytics Opt-out</a>.</p>
+
+    <h2>5. Twoje prawa</h2>
+    <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz wniesienia sprzeciwu. W celu realizacji tych praw skontaktuj się z nami mailowo lub telefonicznie.</p>
+
+    <h2>6. Zmiany polityki</h2>
+    <p>Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej polityce. Aktualna wersja będzie zawsze dostępna pod tym adresem.</p>
+
+    <a class="back" href="index.html">← Wróć do strony głównej</a>
+
+    <footer>
+      <p>&copy; 2026 Wesoła Tawerna. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll('.email-obf').forEach(function(el){
+        var e=el.getAttribute('data-user')+'@'+el.getAttribute('data-domain');
+        el.innerHTML='<a href="mailto:'+e+'">'+e+'</a>';
+      });
+    </script>
+  </body>
+</html>

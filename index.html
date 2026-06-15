@@ -853,14 +853,14 @@
           </div>
         </div>
 
-        <iframe 
+        <iframe
           class="map-embed"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.234567890123!2d20.93650140253081!3d52.32459686486873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDE5JzI4LjUiTiAyMMKwNTYnMTEuNCJF!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl" 
-          width="600" 
-          height="400" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.0!2d20.9365!3d52.3246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDE5JzI4LjUiTiAyMMKwNTYnMTEuNCJF!5e0!3m2!1spl!2spl!4v1"
+          width="600"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Mapa lokalizacji Wesołej Tawerny">
         </iframe>
@@ -879,7 +879,7 @@
         <img src="assets/logo.jpg" alt="Logo Wesoła Tawerna" width="60" height="60">
         <span>Wesoła Tawerna - Grill Bar Białołęka</span>
         <p>Dobre jedzenie • zimne piwo • karaoke • najlepszy klimat nad Wisłą</p>
-        <p><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Polityka prywatności</a></p>
+        <p><a href="privacy.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Polityka prywatności</a></p>
         <p class="copyright">&copy; 2025 Wesoła Tawerna. Wszelkie prawa zastrzeżone.</p>
       </div>
     </footer>
@@ -901,7 +901,7 @@
     </div>
 
     <div class="cookie-banner" id="cookieBanner">
-      <p>Ta strona używa plików cookies, aby zapewnić najlepszą jakość usług. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie. <a href="#" style="color: #d4a017; text-decoration: underline;">Dowiedz się więcej</a></p>
+      <p>Ta strona używa plików cookies, aby zapewnić najlepszą jakość usług. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie. <a href="privacy.html" style="color: #d4a017; text-decoration: underline;">Dowiedz się więcej</a></p>
       <div class="cookie-banner-actions">
         <button class="cookie-accept" onclick="acceptCookies()">Akceptuję</button>
         <button class="cookie-decline" onclick="declineCookies()">Odrzuć</button>
@@ -924,11 +924,11 @@
       }
 
       function initAnalytics() {
-        // Google Analytics - zamień G-XXXXXXXXXX na swój ID
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        // gtag('config', 'G-XXXXXXXXXX');
+        // Google Analytics - zamień G-XXXXXXXXXX na swój właściwy Tracking ID
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-14CHDKYTL1');
       }
 
       // Sprawdź czy użytkownik już wybrał
@@ -972,15 +972,5 @@
       });
     </script>
 
-    <!-- Google Analytics (odkomentuj i dodaj swój ID) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
-  </body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c0d6477d9e265d',t:'MTc4MTUxODc3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
