@@ -358,17 +358,42 @@
         }
         .cookie-banner {
           bottom: 60px;
+          flex-direction: column;
+          text-align: center;
         }
         body {
           padding-bottom: 70px;
-        }
-          flex-direction: column;
-          text-align: center;
         }
         .cookie-banner-actions {
           width: 100%;
           justify-content: center;
         }
+      }
+
+      /* Gallery toggle */
+      .gallery-toggle-wrapper {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .gallery-hidden {
+        display: none !important;
+      }
+
+      .gallery-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .lightbox video {
+        max-width: 95vw;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 4px;
+        display: none;
       }
 
       /* Menu image responsive fix */
@@ -639,7 +664,7 @@
             <h2>Galeria</h2>
           </div>
         </div>
-        <div class="gallery-grid">
+        <div class="gallery-grid" id="gallery-grid">
           <button class="gallery-item gallery-item--feature" type="button" data-lightbox="assets/gallery/karkowka.jpg" aria-label="Powiększ zdjęcie karkówki z grilla">
             <img src="assets/gallery/karkowka.jpg" alt="Karkówka i kiełbasa prosto z grilla w Wesołej Tawernie" width="800" height="600" loading="lazy">
           </button>
@@ -649,9 +674,18 @@
           <button class="gallery-item" type="button" data-lightbox="assets/gallery/karaoke.jpg" aria-label="Powiększ zdjęcie karaoke">
             <img src="assets/gallery/karaoke.jpg" alt="Wieczór karaoke w Wesołej Tawernie" width="600" height="600" loading="lazy">
           </button>
-          <button class="gallery-item" type="button" data-lightbox="assets/gallery/wejscie.jpg" aria-label="Powiększ zdjęcie wejścia">
+          <button class="gallery-item" type="button" data-lightbox="assets/gallery/sport.png" aria-label="Powiększ zdjęcie transmisji sportowej na dużym ekranie">
+            <img src="assets/gallery/sport.png" alt="Transmisje sportowe na dużym ekranie w ogródku piwnym" width="600" height="600" loading="lazy">
+          </button>
+          <button class="gallery-item gallery-hidden" type="button" data-lightbox="assets/gallery/lody.jpg" aria-label="Powiększ zdjęcie lodów gałkowych">
+            <img src="assets/gallery/lody.jpg" alt="Lody gałkowe z lady chłodniczej w Wesołej Tawernie" width="600" height="600" loading="lazy">
+          </button>
+          <button class="gallery-item gallery-hidden" type="button" data-lightbox="assets/gallery/wejscie.jpg" aria-label="Powiększ zdjęcie wejścia">
             <img src="assets/gallery/wejscie.jpg" alt="Wejście do Wesołej Tawerny na Białołęce" width="600" height="600" loading="lazy">
           </button>
+        </div>
+        <div class="gallery-toggle-wrapper">
+          <button class="button secondary" id="gallery-toggle" type="button">Pokaż wszystkie zdjęcia</button>
         </div>
       </section>
 
@@ -818,7 +852,7 @@
           </div>
           <div class="faq-item">
             <h3>Czy lokal jest przyjazny dzieciom i zwierzętom?</h3>
-            <p>Oczywiście! Nasz ogródek pod drzewami to idealne miejsce dla rodzin. Jesteśmy również lokalem "pet-friendly" – Twoi czworonożni przyjaciele są u nas mile widziani.</p>
+            <p>Oczywiście! Nasz ogródek pod drzewami to idealne miejsce dla rodzin – mamy też <strong>plac zabaw</strong>. Dodatkowo transmitujemy wydarzenia sportowe na <strong>dużym ekranie</strong>, więc rodzice mogą śledzić mecz, a dzieci bawić się na świeżym powietrzu. Jesteśmy również lokalem <strong>pet-friendly</strong> – Twoi czworonożni przyjaciele są u nas mile widziani.</p>
           </div>
           <div class="faq-item">
             <h3>Jakie są godziny otwarcia Wesołej Tawerny?</h3>
@@ -927,6 +961,7 @@
     <div class="lightbox" data-lightbox-panel hidden>
       <button type="button" aria-label="Zamknij podgląd" data-lightbox-close>×</button>
       <img src="" alt="Powiększone zdjęcie">
+      <video src="" controls preload="metadata" aria-label="Powiększone wideo" style="display:none;"></video>
     </div>
 
     <a class="phone-fab" href="tel:+48507735082" aria-label="Zadzwoń do Wesołej Tawerny">
@@ -1006,8 +1041,59 @@
           cta.setAttribute('href', 'tel:+48507735082');
           cta.innerHTML = '📞 Zadzwoń teraz';
         }
+
+        // Gallery toggle (show/hide extra images)
+        var galleryGrid = document.getElementById('gallery-grid');
+        var galleryToggle = document.getElementById('gallery-toggle');
+        if (galleryGrid && galleryToggle) {
+          galleryToggle.addEventListener('click', function(){
+            var hidden = galleryGrid.querySelectorAll('.gallery-hidden');
+            var anyHidden = hidden.length > 0;
+            if (anyHidden) {
+              hidden.forEach(function(item){ item.classList.remove('gallery-hidden'); });
+              galleryToggle.textContent = 'Ukryj dodatkowe zdjęcia';
+            } else {
+              galleryGrid.querySelectorAll('.gallery-item').forEach(function(item, idx){
+                if (idx >= 4) item.classList.add('gallery-hidden');
+              });
+              galleryToggle.textContent = 'Pokaż wszystkie zdjęcia';
+            }
+          });
+        }
+
+        // Lightbox video support
+        var lbPanel = document.querySelector('[data-lightbox-panel]');
+        var lbImg = lbPanel ? lbPanel.querySelector('img') : null;
+        var lbVideo = lbPanel ? lbPanel.querySelector('video') : null;
+        if (lbPanel && lbImg && lbVideo) {
+          var imgObs = new MutationObserver(function() {
+            var src = lbImg.getAttribute('src') || '';
+            if (src.match(/\.(mp4|webm)$/i)) {
+              lbImg.style.display = 'none';
+              lbVideo.src = src;
+              lbVideo.style.display = 'block';
+              lbVideo.play().catch(function(){});
+            } else {
+              lbVideo.style.display = 'none';
+              lbVideo.pause();
+              lbVideo.removeAttribute('src');
+              lbVideo.load();
+              lbImg.style.display = 'block';
+            }
+          });
+          imgObs.observe(lbImg, { attributes: true, attributeFilter: ['src'] });
+
+          var panelObs = new MutationObserver(function() {
+            if (lbPanel.hasAttribute('hidden')) {
+              lbVideo.pause();
+              lbVideo.removeAttribute('src');
+              lbVideo.load();
+            }
+          });
+          panelObs.observe(lbPanel, { attributes: true, attributeFilter: ['hidden'] });
+        }
       });
     </script>
 
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c106acbeb23196',t:'MTc4MTUyMDc1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c13068ba243bb5',t:'MTc4MTUyMjQ2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c106acbeb23196',t:'MTc4MTUyMDc1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c13068ba243bb5',t:'MTc4MTUyMjQ2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c4c6413a774c6b',t:'MTc4MTU2MDA1OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

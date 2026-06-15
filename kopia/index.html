@@ -22,6 +22,15 @@
     <link rel="preconnect" href="https://www.google.com">
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14CHDKYTL1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-14CHDKYTL1');
+    </script>
+
     <style>
       /* Skip to content link */
       .skip-to-content {
@@ -265,6 +274,19 @@
         margin-top: 1.5rem;
       }
 
+      /* Footer link styling */
+      .footer-privacy {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+      .footer-privacy:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+
       /* Email protection styling */
       .safe-email { 
         cursor: pointer;
@@ -331,14 +353,33 @@
         border-color: #fff;
       }
       @media (max-width: 768px) {
+        .phone-fab {
+          display: none;
+        }
         .cookie-banner {
+          bottom: 60px;
           flex-direction: column;
           text-align: center;
+        }
+        body {
+          padding-bottom: 70px;
         }
         .cookie-banner-actions {
           width: 100%;
           justify-content: center;
         }
+      }
+
+      /* Menu image responsive fix */
+      .menu-preview-wrapper {
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .menu-preview-wrapper img,
+      .menu-preview img {
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
 
       /* Mobile CTA bar */
@@ -607,6 +648,12 @@
           <button class="gallery-item" type="button" data-lightbox="assets/gallery/karaoke.jpg" aria-label="Powiększ zdjęcie karaoke">
             <img src="assets/gallery/karaoke.jpg" alt="Wieczór karaoke w Wesołej Tawernie" width="600" height="600" loading="lazy">
           </button>
+          <button class="gallery-item" type="button" data-lightbox="assets/gallery/sport.png" aria-label="Powiększ zdjęcie transmisji sportowej na dużym ekranie">
+            <img src="assets/gallery/sport.png" alt="Transmisje sportowe na dużym ekranie w ogródku piwnym" width="600" height="600" loading="lazy">
+          </button>
+          <button class="gallery-item" type="button" data-lightbox="assets/gallery/lody.jpg" aria-label="Powiększ zdjęcie lodów gałkowych">
+            <img src="assets/gallery/lody.jpg" alt="Lody gałkowe z lady chłodniczej w Wesołej Tawernie" width="600" height="600" loading="lazy">
+          </button>
           <button class="gallery-item" type="button" data-lightbox="assets/gallery/wejscie.jpg" aria-label="Powiększ zdjęcie wejścia">
             <img src="assets/gallery/wejscie.jpg" alt="Wejście do Wesołej Tawerny na Białołęce" width="600" height="600" loading="lazy">
           </button>
@@ -776,7 +823,7 @@
           </div>
           <div class="faq-item">
             <h3>Czy lokal jest przyjazny dzieciom i zwierzętom?</h3>
-            <p>Oczywiście! Nasz ogródek pod drzewami to idealne miejsce dla rodzin. Jesteśmy również lokalem "pet-friendly" – Twoi czworonożni przyjaciele są u nas mile widziani.</p>
+            <p>Oczywiście! Nasz ogródek pod drzewami to idealne miejsce dla rodzin – mamy też <strong>plac zabaw</strong>. Dodatkowo transmitujemy wydarzenia sportowe na <strong>dużym ekranie</strong>, więc rodzice mogą śledzić mecz, a dzieci bawić się na świeżym powietrzu. Jesteśmy również lokalem <strong>pet-friendly</strong> – Twoi czworonożni przyjaciele są u nas mile widziani.</p>
           </div>
           <div class="faq-item">
             <h3>Jakie są godziny otwarcia Wesołej Tawerny?</h3>
@@ -846,21 +893,19 @@
             <a class="button primary" href="tel:+48507735082">📞 507 735 082</a>
             <a class="button map" href="https://www.google.com/maps/dir/?api=1&destination=52.32459686486873,20.93650140253081" target="_blank" rel="noopener noreferrer">Nawiguj do nas</a>
           </div>
-          <div class="qr-box">
-            <img src="assets/facebook-qr.png" alt="Kod QR do Facebooka Wesołej Tawerny" width="200" height="200" loading="lazy">
-            <span>Aktualności i wydarzenia na Facebooku</span>
-            <a href="https://www.facebook.com/profile.php?id=61577612831058" target="_blank" rel="noopener noreferrer" class="button btn-facebook" style="margin-top:0.5rem;">Odwiedź nas na Facebooku</a>
-          </div>
+    <div class="qr-box" style="margin-top:1.5rem;">
+      <a href="https://www.facebook.com/profile.php?id=61577612831058" target="_blank" rel="noopener noreferrer" class="button btn-facebook" style="margin-top:0;">Odwiedź nas na Facebooku</a>
+    </div>
         </div>
 
-        <iframe 
+        <iframe
           class="map-embed"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.234567890123!2d20.93650140253081!3d52.32459686486873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDE5JzI4LjUiTiAyMMKwNTYnMTEuNCJF!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl" 
-          width="600" 
-          height="400" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.0!2d20.9365!3d52.3246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDE5JzI4LjUiTiAyMMKwNTYnMTEuNCJF!5e0!3m2!1spl!2spl!4v1"
+          width="600"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Mapa lokalizacji Wesołej Tawerny">
         </iframe>
@@ -879,7 +924,7 @@
         <img src="assets/logo.jpg" alt="Logo Wesoła Tawerna" width="60" height="60">
         <span>Wesoła Tawerna - Grill Bar Białołęka</span>
         <p>Dobre jedzenie • zimne piwo • karaoke • najlepszy klimat nad Wisłą</p>
-        <p><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Polityka prywatności</a></p>
+        <p><a href="privacy.html" class="footer-privacy">Polityka prywatności</a></p>
         <p class="copyright">&copy; 2025 Wesoła Tawerna. Wszelkie prawa zastrzeżone.</p>
       </div>
     </footer>
@@ -901,7 +946,7 @@
     </div>
 
     <div class="cookie-banner" id="cookieBanner">
-      <p>Ta strona używa plików cookies, aby zapewnić najlepszą jakość usług. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie. <a href="#" style="color: #d4a017; text-decoration: underline;">Dowiedz się więcej</a></p>
+      <p>Ta strona używa plików cookies, aby zapewnić najlepszą jakość usług. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie. <a href="privacy.html" style="color: #d4a017; text-decoration: underline;">Dowiedz się więcej</a></p>
       <div class="cookie-banner-actions">
         <button class="cookie-accept" onclick="acceptCookies()">Akceptuję</button>
         <button class="cookie-decline" onclick="declineCookies()">Odrzuć</button>
@@ -924,11 +969,8 @@
       }
 
       function initAnalytics() {
-        // Google Analytics - zamień G-XXXXXXXXXX na swój ID
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        // gtag('config', 'G-XXXXXXXXXX');
+        // Google Analytics już załadowana w <head> przez gtag.js
+        // Tu można dodać dodatkowe konfiguracje eventów jeśli potrzeba
       }
 
       // Sprawdź czy użytkownik już wybrał
@@ -972,15 +1014,5 @@
       });
     </script>
 
-    <!-- Google Analytics (odkomentuj i dodaj swój ID) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
-  </body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c106acbeb23196',t:'MTc4MTUyMDc1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c13068ba243bb5',t:'MTc4MTUyMjQ2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c4693e9ad26da8',t:'MTc4MTU1NjI0OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

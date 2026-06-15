@@ -1,2 +1,14 @@
 *.zip
 preview-*.png
+
+# Kopie zapasowe
+*.bak
+index.html.bak
+
+# Tymczasowe pliki systemowe
+Thumbs.db
+desktop.ini
+
+# Edytory
+*~
+*.tmp
