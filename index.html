@@ -274,6 +274,19 @@
         margin-top: 1.5rem;
       }
 
+      /* Footer link styling */
+      .footer-privacy {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+      .footer-privacy:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+
       /* Email protection styling */
       .safe-email { 
         cursor: pointer;
@@ -340,7 +353,15 @@
         border-color: #fff;
       }
       @media (max-width: 768px) {
+        .phone-fab {
+          display: none;
+        }
         .cookie-banner {
+          bottom: 60px;
+        }
+        body {
+          padding-bottom: 70px;
+        }
           flex-direction: column;
           text-align: center;
         }
@@ -867,11 +888,9 @@
             <a class="button primary" href="tel:+48507735082">📞 507 735 082</a>
             <a class="button map" href="https://www.google.com/maps/dir/?api=1&destination=52.32459686486873,20.93650140253081" target="_blank" rel="noopener noreferrer">Nawiguj do nas</a>
           </div>
-          <div class="qr-box">
-            <img src="assets/facebook-qr.png" alt="Kod QR do Facebooka Wesołej Tawerny" width="200" height="200" loading="lazy">
-            <span>Aktualności i wydarzenia na Facebooku</span>
-            <a href="https://www.facebook.com/profile.php?id=61577612831058" target="_blank" rel="noopener noreferrer" class="button btn-facebook" style="margin-top:0.5rem;">Odwiedź nas na Facebooku</a>
-          </div>
+    <div class="qr-box" style="margin-top:1.5rem;">
+      <a href="https://www.facebook.com/profile.php?id=61577612831058" target="_blank" rel="noopener noreferrer" class="button btn-facebook" style="margin-top:0;">Odwiedź nas na Facebooku</a>
+    </div>
         </div>
 
         <iframe
@@ -900,7 +919,7 @@
         <img src="assets/logo.jpg" alt="Logo Wesoła Tawerna" width="60" height="60">
         <span>Wesoła Tawerna - Grill Bar Białołęka</span>
         <p>Dobre jedzenie • zimne piwo • karaoke • najlepszy klimat nad Wisłą</p>
-        <p><a href="privacy.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Polityka prywatności</a></p>
+        <p><a href="privacy.html" class="footer-privacy">Polityka prywatności</a></p>
         <p class="copyright">&copy; 2025 Wesoła Tawerna. Wszelkie prawa zastrzeżone.</p>
       </div>
     </footer>
@@ -990,5 +1009,5 @@
       });
     </script>
 
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c106acbeb23196',t:'MTc4MTUyMDc1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c106acbeb23196',t:'MTc4MTUyMDc1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c13068ba243bb5',t:'MTc4MTUyMjQ2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
