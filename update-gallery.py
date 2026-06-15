@@ -35,14 +35,14 @@ ALT_MAP = {
 def get_gallery_images():
     """Znajduje wszystkie zdjęcia w assets/gallery/ i sortuje alfabetycznie."""
     if not GALLERY_DIR.exists():
-        print(f"❌ Folder {GALLERY_DIR} nie istnieje!")
+        print(f"Folder {GALLERY_DIR} nie istnieje!")
         return []
     
-        images = []
-        for ext in ("*.jpg", "*.jpeg", "*.png", "*.webp", "*.mp4", "*.webm"):
-            for f in sorted(GALLERY_DIR.glob(ext)):
-                images.append(f.name)
-        return images
+    images = []
+    for ext in ("*.jpg", "*.jpeg", "*.png", "*.webp", "*.mp4", "*.webm"):
+        for f in sorted(GALLERY_DIR.glob(ext)):
+            images.append(f.name)
+    return images
 
 def generate_gallery_html(images):
     """Generuje bloki HTML dla galerii."""
@@ -115,7 +115,7 @@ def main():
     
     if not images:
         print("⚠️  Nie znaleziono żadnych zdjęć w assets/gallery/")
-        return
+        import sys; sys.exit(1)
     
     print(f"📷 Znaleziono {len(images)} zdjęć:")
     for img in images:
@@ -129,10 +129,6 @@ def main():
     if update_html(gallery_html):
         print(f"✅ Gotowe! Zaktualizowano {len(images)} zdjęć w galerii.")
         print(f"   Pierwsze 4 zdjęcia widoczne, reszta ukryta pod przyciskiem.")
-        print(f"\n🚀 Teraz wypchnij zmiany na GitHub:")
-        print(f"   git add index.html")
-        print(f"   git commit -m \"aktualizacja galerii – {len(images)} zdjęcia\"")
-        print(f"   git push")
         
         # Nieznane zdjęcia ostrzeżenie
         unknown = [i for i in images if i not in ALT_MAP]
@@ -141,6 +137,7 @@ def main():
             print(f"   Edytuj ALT_MAP w pliku update-gallery.py, żeby poprawić SEO.")
     else:
         print("❌ Coś poszło nie tak. Sprawdź czy index.html ma poprawną strukturę.")
+        import sys; sys.exit(1)
 
 if __name__ == "__main__":
     main()
